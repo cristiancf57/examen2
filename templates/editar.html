@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row g-8">
+    <div class="py-9 text-center">
+        <h3 class="mb-3">Editar</h3>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">Carrera Ingenieria de Sistemas de la Universidad Publica de El Alto</p>
+        </div>
+        
+        <div class="overflow-hidden col-lg-8 mx-auto">
+            <table class="table table-bordered">
+                
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Fecha de Vencimiento</th>
+                    </tr>
+                </thead>
+                <form action="{{ url_for('procesa') }}" method="POST">
+                    <tbody>
+                        <tr>
+                            <td><input type="text" class="form-control" id="nombre" name="nombre" value="{{ nombre }}" required></td>
+                            <td><input type="text" class="form-control" id="cantidad" name="cantidad" value="{{ cantidad }}" required></td>
+                            <td><input type="text" class="form-control" step="0.01" id="precio" name="precio" value="{{ precio }}" required></td>
+                            <td>
+                                <select class="form-select" id="categoria" name="categoria" required>
+                                    <option class="form-check-input" value="{{ categoria }}">seleccionar...</option>
+                                    <option class="form-check-input" value="Bebida">Bebida</option>
+                                    <option class="form-check-input" value="GAlleta">Galleta</option>
+                                    <option class="form-check-input" value="Fruta">Fruta</option>
+                                    <option class="form-check-input" value="Cereales">Cereales</option>
+                                </select>
+                            </td>
+                            <td><input type="date" class="form-control" id="fecha" name="fecha" value="{{ fecha }}" required></td>
+                            <td>
+                                <button class="w-100 btn btn-primary btn-lg" type="submit">Enviar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </form>
+            </table>
+        </div>  
+    </div>
+    
+</div>
+{% endblock %}

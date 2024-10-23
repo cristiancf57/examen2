@@ -1,0 +1,68 @@
+{% extends "layout.html"  %}
+
+{% block content %}
+<main>
+    <div class="row g-8">
+        <div class="py-12 text-center">
+            <h3 class="mb-3">Formulario de registro</h3>
+            <form class="needs-validation col-3 mx-auto" action="{{ url_for('procesa') }}" method="POST">
+                <hr class="my-4">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Se requiere un dato válido.
+                        </div>
+                    </div>
+    
+                    <div class="col-12">
+                        <label for="cantidad" class="form-label">Cantidad</label>
+                        <input type="number" class="form-control" id="cantidad" name="cantidad" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Se requiere un dato válido.
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="precio" class="form-label">precio</label>
+                        <input type="number" class="form-control" step="0.01" id="precio" name="precio" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Se requiere un dato válido.
+                        </div>
+                    </div>
+    
+                    <div class="col-12">
+                        <label for="categoria" class="form-label">Categoria</label>
+                        <select class="form-select" id="categoria" name="categoria" required>
+                            <option class="form-check-input" >seleccionar...</option>
+                            <option class="form-check-input" value="Bebida">Bebida</option>
+                            <option class="form-check-input" value="Galleta">Galleta</option>
+                            <option class="form-check-input" value="Fruta">Fruta</option>
+                            <option class="form-check-input" value="Cereales">Cereales</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Se requiere un dato válido.
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-4">
+                <div class="col-8">
+                    <label for="fecha" class="form-label">Fecha</label>
+                    <input type="date" class="form-control" id="fecha" name="fecha" placeholder="" required>
+                    <div class="invalid-feedback">
+                        Se requiere un dato válido.
+                    </div>
+                </div>
+                <hr class="my-4">
+                <button class="w-100 btn btn-primary btn-lg" type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+
+
+
+
